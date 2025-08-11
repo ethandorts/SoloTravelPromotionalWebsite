@@ -4,55 +4,14 @@
     <meta charset="UTF-8">
     <title>SoloTravel</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-
-            const isOpen = sidebar.classList.contains('translate-x-0');
-
-            if (isOpen) {
-                sidebar.classList.remove('translate-x-0');
-                sidebar.classList.add('-translate-x-full');
-                overlay.classList.add('hidden');
-            } else {
-                sidebar.classList.remove('-translate-x-full');
-                sidebar.classList.add('translate-x-0');
-                overlay.classList.remove('hidden');
-            }
-        }
-
-        window.onload = function () {
-            const slides = document.querySelectorAll('[data-slide]');
-            let current = 0;
-
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    slide.classList.toggle('opacity-100', i === index);
-                    slide.classList.toggle('opacity-0', i !== index);
-                });
-            }
-
-            function nextSlide() {
-                current = (current + 1) % slides.length;
-                showSlide(current);
-            }
-
-            function prevSlide() {
-                current = (current - 1 + slides.length) % slides.length;
-                showSlide(current);
-            }
-
-            window.nextSlide = nextSlide;
-            window.prevSlide = prevSlide;
-
-            showSlide(current);
-            setInterval(nextSlide, 5000);
-        };
-    </script>
+    <script src="../javascript/landing.js"></script>
 
 </head>
 <body class="bg-gray-100">
+
+<!-- 1. Travel Risk Quiz - Questions Click Game -->
+<!-- 2. Currency converter game -->
+<!-- 3. Itinerary builder -->
 
 <div class="fixed top-0 left-0 w-full bg-gradient-to-r from-black via-gray-900 to-black text-white p-4 font-bold flex items-center justify-between z-50">
     <button class="flex flex-col justify-center items-center w-8 h-8 space-y-1" onclick="toggleSidebar()">
@@ -156,11 +115,6 @@
         </div>
     </div>
 </footer>
-
-
-
-
-
 
 </body>
 </html>
